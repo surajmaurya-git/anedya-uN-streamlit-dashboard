@@ -139,6 +139,43 @@ def gauge_section(data:list=None):
                 sv.gauge(data[3],"Ambient Temperature",cWidth=True,gSize="MED",sFix="°C",arTop=arTop,arBot=arBot)
             else:
                 st.error("No Data Available")
+def sync_controllers_state(node_client=None):
+    
+    res = node_client.get_valueStore(key="door")
+    if res.get("isSuccess") is True and res.get("value") is not None:
+        value = res.get("value")
+        if value == 0:
+            st.session_state.door = "Open Door"
+        elif(value == 1):
+            st.session_state.door = "Close Door"
+        else:
+            print("Invalid value")
+
+    res = node_client.get_valueStore(key="light")
+    if res.get("isSuccess") is True and res.get("value") is not None:
+        value = res.get("value")
+        if value == 0:
+            st.session_state.light = "Turn Light On"
+        elif(value <= 5):
+            st.session_state.light = "Turn Light Off"
+        else:
+            print("Invalid value")
+
+    res = node_client.get_valueStore(key="fan")
+    if res.get("isSuccess") is True and res.get("value") is not None:
+        value = res.get("value")
+        if value == 1:
+            st.session_state.fan = "Turn Fan Off"
+        elif(value <= 3):
+            st.session_state.fan = "Turn Fan On"
+
+    res = node_client.get_valueStore(key="massage")
+    if res.get("isSuccess") is True and res.get("value") is not None:
+        value = res.get("value")
+        if value == 1:
+            st.session_state.massage = "Turn Massager Off"
+        else:
+            st.session_state.massage = "Turn Massager On"
 
 def controllers_section(node_client=None):
     if node_client is None:
@@ -146,6 +183,7 @@ def controllers_section(node_client=None):
     container = st.container(border=True)
     with container:
         st.subheader(body="Controllers", anchor=False)
+        sync_controllers_state(node_client=node_client)
         r1_cols = st.columns([1,1,1,1], gap="small")
         with r1_cols[0]:
             st.subheader("Door")
