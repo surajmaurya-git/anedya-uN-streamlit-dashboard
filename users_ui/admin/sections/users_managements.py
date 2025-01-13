@@ -40,7 +40,9 @@ def delete_user_ui():
             submit_button = st.form_submit_button(label="Submit")
             if submit_button:
                 if email == "":
-                    st.error("Please provide a valid email")
+                    st.toast("Please provide a valid email",icon="🚫")
+                elif email=="admin@gmail.com":
+                    st.error("Admin cannot be deleted")
                 else:
                     delete_user(email)
 
@@ -98,16 +100,16 @@ def edits_user_ui():
                 edit_req_payload["password"] = password
             if "Permissions" in edit_key:
                 options = [
-                    "Unit-1",
-                    "Unit-2",
-                    "Unit-3",
-                    "Unit-4",
-                    "Unit-5",
-                    "Unit-6",
-                    "Unit-7",
-                    "Unit-8",
-                    "Unit-9",
-                    "Unit-10",
+                    "Pod-1",
+                    "Pod-2",
+                    "Pod-3",
+                    "Pod-4",
+                    "Pod-5",
+                    "Pod-6",
+                    "Pod-7",
+                    "Pod-8",
+                    "Pod-9",
+                    "Pod-10",
                 ]
                 permissions = st.pills("Permissions", options, selection_mode="multi")
                 edit_req_payload["permissions"] = permissions

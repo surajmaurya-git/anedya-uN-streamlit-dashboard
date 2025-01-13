@@ -5,7 +5,6 @@ __pycache__/
 
 test.py
 /development/
-cloud/firestore/phloton-streamlit-firestore-private-key.json
 cloud/firestore/FIREBASE_PRIVATE_KEY.json
 
 

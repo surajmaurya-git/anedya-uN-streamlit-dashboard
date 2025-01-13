@@ -1,4 +1,4 @@
-"""Phloton Dashboard  by Anedya"""
+"""uN Dashboard  by Anedya"""
 
 import streamlit as st
 import os
