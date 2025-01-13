@@ -102,7 +102,7 @@ def get_latestData(param_variable_identifier: str, nodeId: str, apiKey: str) -> 
     # response=request("POST", url, headers=headers, data=payload)
     response_message = response.text
     if response.status_code == 200:
-        print(response_message)
+        # print(response_message)
         data = json.loads(response_message).get("data")
         if data == {} or data == None:
             print("No Data found")
