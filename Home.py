@@ -73,7 +73,7 @@ def drawLogin():
     with cols[0]:
         pass
     with cols[1]:
-            st.title("Phloton Dashboard Login", anchor=False)
+            st.title("Dashboard Login", anchor=False)
             username_inp = st.text_input("Email").strip()
             password_inp = st.text_input("Password", type="password").strip()
             submit_button = st.button(label="Submit")
