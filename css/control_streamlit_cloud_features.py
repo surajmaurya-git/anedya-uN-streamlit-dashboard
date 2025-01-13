@@ -15,11 +15,11 @@ hide_streamlit_style = """
         # visibility: hidden;
         # height: 0%;
         # position: fixed;
-        }
-        # #MainMenu {
+        # }
+        # MainMenu {
         # visibility: hidden;
         # height: 0%;
-        # # }
+        # }
         # header {
         # visibility: hidden;
         # height: 0%;
@@ -28,5 +28,8 @@ hide_streamlit_style = """
         # visibility: hidden;
         # height: 0%;
         # }
+        section[data-testid="stSidebar"] {
+            width: 100px !important; # Set the width to your desired value
+        }
         </style>
         """

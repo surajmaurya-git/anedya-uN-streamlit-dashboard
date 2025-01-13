@@ -6,15 +6,15 @@ import os
 def drawUsersDashboard():
     current_dir=os.getcwd()
     user_permissions = st.session_state.user_permissions
-    Units_pages = []
+    Pods_pages = []
     for i in range(1, 11):
-        unit = f"Unit-{i}"
-        if unit in user_permissions:
+        pod = f"Pod-{i}"
+        if pod in user_permissions:
             page = st.Page(f"{current_dir}/units/pod_{i}.py", title=f"POD {i}", icon="🛜", default=(i == 1))
-            Units_pages.append(page)
+            Pods_pages.append(page)
 
     pages = {
-        "Units": Units_pages
+        "Units": Pods_pages
     }
     pg = st.navigation(pages)
     st.logo(f"{current_dir}/images/logo.png",size="large")

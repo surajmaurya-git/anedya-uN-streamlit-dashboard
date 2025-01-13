@@ -22,7 +22,7 @@ def adminDashboard():
         st.subheader("Overview")
         r1_metrics_cols = st.columns([1,1,1], gap="small")
         with r1_metrics_cols[0]:
-            st.metric("Total Units", "10",border=True)
+            st.metric("Total POD", "5",border=True)
         with r1_metrics_cols[1]:
             total_users = st.session_state.firestore_client.collection("users").stream()
             st.metric("Total Users", len(list(total_users)),border=True)
