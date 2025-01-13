@@ -1,4 +1,4 @@
-# anedya-nP-streamlit-dashboard
+# anedya-uP-streamlit-dashboard
 
 ## Project Setup Instructions
 
