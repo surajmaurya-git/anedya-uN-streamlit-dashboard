@@ -39,6 +39,8 @@ def main():
             drawAdminDashboard()
         else:
             drawUsersDashboard()
+            # pass
+
 
 def project_setup():
     initialize_session_state() # Initialize Session State
@@ -62,7 +64,7 @@ def drawLogin():
     current_dir=os.getcwd()
     pages = {
         "Units": [
-            st.Page(f"{current_dir}/units/unit_1.py", title="Unit 1"),
+            st.Page(f"{current_dir}/units/pod_1.py", title="Unit 1"),
         ]
     }
     st.navigation(pages,position="hidden")
