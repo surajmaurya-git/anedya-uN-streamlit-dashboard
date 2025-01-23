@@ -13,7 +13,7 @@ from users_ui.admin.admin_dashboard import drawAdminDashboard
 from users_ui.users.users_units_dashboard import drawUsersDashboard
 
 
-st.set_page_config(page_title="Urban Nap", layout="wide")
+st.set_page_config(page_title="Demo", layout="wide")
 
 refresh_interval = 30000
 st_autorefresh(interval=refresh_interval, limit=None, key="auto-refresh-handler")

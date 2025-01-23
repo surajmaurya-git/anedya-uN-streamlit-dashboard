@@ -18,8 +18,8 @@ def drawUsersDashboard():
     }
     pg = st.navigation(pages)
     st.logo(f"{current_dir}/images/logo.png",size="large")
-    st.sidebar.subheader("Urban Nap ")
-    st.sidebar.markdown("Offers innovative nap pods that enhance productivity and well-being.")
+    st.sidebar.subheader("Demo ")
+    st.sidebar.markdown("Anedya Demo Dashbaord")
     pg.run()
     
     
